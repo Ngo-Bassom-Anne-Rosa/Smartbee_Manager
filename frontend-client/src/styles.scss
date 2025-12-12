@@ -1,0 +1,42 @@
+/* /frontend-client/src/styles.scss */
+
+// Définition de votre palette
+$yellow: #FFD700; // Jaune Miel
+$black: #111111; // Noir Profond
+$white: #ffffff;
+$light-bg: #F8F8F8; // Fond très clair pour les cartes
+$dark-grey: #444444; // Texte secondaire
+
+// Importation de la police Poppins
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import "leaflet/dist/leaflet.css";
+
+body {
+  background-color: $white;
+  color: $black;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+.card {
+  background-color: $white;
+  border-radius: 12px; // Bord arrondis modernes
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); // Ombre douce
+  transition: transform 0.3s ease;
+
+  // Effet subtil au survol
+  &:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.text-yellow {
+  color: $yellow;
+}
+
+.text-primary {
+  color: $black;
+}

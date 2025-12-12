@@ -1,0 +1,54 @@
+<section class="dashboard-root">
+  <header class="dash-header">
+    <div class="title-block">
+      <h1>SmartBee Manager</h1>
+      <p class="subtitle">Tableau de bord — Ruches connectées</p>
+    </div>
+
+    <div class="mini-stats">
+      <div class="stat-card">
+        <div class="stat-value">{{stats.totalHives}}</div>
+        <div class="stat-label">Ruches</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">{{stats.apiaries}}</div>
+        <div class="stat-label">Ruchers</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">{{stats.averageWeight}} kg</div>
+        <div class="stat-label">Poids moyen</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="dash-main">
+    <div class="map-panel card">
+      <div id="map"></div>
+    </div>
+
+    <aside class="right-panel">
+      <div class="card chart-card">
+        <h3>Poids — dernières 7 jours</h3>
+        <app-poids-chart [series]="getChartSeries()"></app-poids-chart>
+      </div>
+
+      <div class="card alerts-card">
+        <h3>Alertes récentes</h3>
+        <ul>
+          <li>Ruche 2 — Batterie faible</li>
+          <li>Ruche 7 — Poids en baisse</li>
+          <li>Ruche 12 — Miel prêt</li>
+        </ul>
+      </div>
+
+      <div class="card quick-list">
+        <h3>Ruches rapides</h3>
+        <ul>
+          <li *ngFor="let h of hives.slice(0,6)">
+            <strong>{{h.name}}</strong> — {{h.poids}} kg
+          </li>
+        </ul>
+      </div>
+    </aside>
+  </main>
+</section>

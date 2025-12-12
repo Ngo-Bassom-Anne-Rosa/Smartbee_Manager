@@ -1,0 +1,9 @@
+# Dépendances des gestionnaires de paquets
+node_modules
+venv
+__pycache__
+/dist
+
+# Fichiers d'environnement (très important pour les clés API)
+.env
+.DS_Store
